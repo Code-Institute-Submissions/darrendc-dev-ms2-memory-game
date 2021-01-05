@@ -25,13 +25,30 @@
                     </div>
                     <div class="collapse navbar-collapse" id="dropdown-mobile">
                     <ul class="navbar-nav">
+                <!-- Modal button -->
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contact</a>
+                            <a class="nav-link" href="#myModal" data-toggle = "modal" data-target="#contact-modal" >Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">Play</a>
                         </li>
                     </ul>
+                    <div class="modal fade" id="contact-modal" tabindex="-1" aria-labelledby="contactformheader" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="contactformheader">Contact Form</h5>
+                            <button type="button" class="btn-close btn-primary" data-bs-dismiss="modal" aria-label="Close">Return</button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email Address">
+                            <textarea name="Project Idea or Feedback" id="" cols="30" rows="10"></textarea>
+                            <button type="button" class="btn btn-primary">Send</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </nav>
         </header>
