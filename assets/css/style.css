@@ -1,0 +1,10 @@
+
+
+
+
+#background-image {
+    background: url("../images/background-images/background-desktop.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    border-radius: 0;
+}
