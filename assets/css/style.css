@@ -14,28 +14,63 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 /*-- Nav-Bar--*/
+.page-nav {
+    font-size: 20px;
+    color: rgb(	251, 253, 138);
+}
+
+.page-nav li{
+    
+}
+
+
 #nav-top {
     background-color: rgba(	8, 105, 114, 0.8);
 }
 
 #active-home{
     text-decoration: underline;
+    text-underline-offset: 5px;
     color: rgb(	251, 253, 138);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 #active-play{
     text-decoration: underline;
+    text-underline-offset: 5px;
     color: rgb(	251, 253, 138);
-    font-weight: 500;
+    font-weight: 600;
 }
 /*-- Nav-Bar:Hover--*/
+.page-nav li:hover a {
+    color: rgb(	251, 253, 138) !important;
+}
 
 
 /*-- Modal CSS--*/
+.modal-form {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-send {
+    color: rgb(	251, 253, 138);
+    background: rgb(8, 105, 114);
+}
+
+.modal-body {
+    background-color: rgb(135, 223, 214);
+}
+
+.modal-header {
+    color: rgb(	251, 253, 138);
+    background-color: rgb(8, 105, 114)
+}
+
+
 
 
 /*-- Body--*/
+
 /*-- Cards -- */
 #howToPlay  {
     background-color: rgb(251, 253, 138) ;
@@ -54,6 +89,9 @@
     padding-left: 0;
 }
 /*-- Social-Links--*/
+.footer-social{
+    align-items: center;
+}
 .footer-social i {
     color: rgb(	251, 253, 138);
 }
@@ -70,18 +108,9 @@
 }
 /*-- Socail-Links:Hover--*/
 .footer-social i:hover {
+    padding: .5mm;
     border: 1mm;
     border-style: solid;
     border-radius: 50%;
     background-color: rgb(255, 0, 0);
 }
-
-
-
-
-
-
-
-
-
-
