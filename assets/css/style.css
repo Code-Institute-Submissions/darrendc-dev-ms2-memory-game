@@ -1,7 +1,5 @@
 
-
-
-
+/* Background-Images */
 #background-image {
     background: url("../images/background-images/background-desktop.jpg") no-repeat center center;
     background-size: cover;
@@ -9,15 +7,56 @@
     border-radius: 0;
 }
 
+/*-- Header--*/
+/*-- Logo--*/
 #logo{
     color: rgb(	251, 253, 138);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-.footer-social {
-
+/*-- Nav-Bar--*/
+#nav-top {
+    background-color: rgba(	8, 105, 114, 0.8);
 }
 
+#active-home{
+    text-decoration: underline;
+    color: rgb(	251, 253, 138);
+    font-weight: 500;
+}
+
+#active-play{
+    text-decoration: underline;
+    color: rgb(	251, 253, 138);
+    font-weight: 500;
+}
+/*-- Nav-Bar:Hover--*/
+
+
+/*-- Modal CSS--*/
+
+
+/*-- Body--*/
+/*-- Cards -- */
+#howToPlay  {
+    background-color: rgb(251, 253, 138) ;
+    margin-top: 2.5%;
+}
+
+#info {
+    background-color: rgb(251, 253, 138) ;
+    margin-top: 2.5%;
+}
+/*-- Footer--*/
+#nav-footer {
+    background-color: rgba(	8, 105, 114, 0.8);
+    margin: 0;
+    text-align: center;
+    padding-left: 0;
+}
+/*-- Social-Links--*/
+.footer-social i {
+    color: rgb(	251, 253, 138);
+}
 .footer-social li {
     list-style: none;
     font-size: xx-large;
@@ -25,22 +64,24 @@
     display: inline-block;
 }
 
-.footer-social i:hover {
-    background-color: rgb(251, 255, 0);
-}
-
 .list-item-social {
     padding-left: 2.5vw;
     padding-right: 2.5vw;
 }
-
-#nav-top {
-    background-color: rgba(	8, 105, 114, 0.8);
+/*-- Socail-Links:Hover--*/
+.footer-social i:hover {
+    border: 1mm;
+    border-style: solid;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
 }
 
-#nav-footer {
-    background-color: rgba(	8, 105, 114, 0.8);
-    margin: 0;
-    text-align: center;
-    padding-left: 0;
-}
+
+
+
+
+
+
+
+
+
