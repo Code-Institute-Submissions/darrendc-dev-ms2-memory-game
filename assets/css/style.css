@@ -8,3 +8,39 @@
     min-height: 100vh;
     border-radius: 0;
 }
+
+#logo{
+    color: rgb(	251, 253, 138);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer-social {
+
+}
+
+.footer-social li {
+    list-style: none;
+    font-size: xx-large;
+    text-align: center;
+    display: inline-block;
+}
+
+.footer-social i:hover {
+    background-color: rgb(251, 255, 0);
+}
+
+.list-item-social {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+}
+
+#nav-top {
+    background-color: rgba(	8, 105, 114, 0.8);
+}
+
+#nav-footer {
+    background-color: rgba(	8, 105, 114, 0.8);
+    margin: 0;
+    text-align: center;
+    padding-left: 0;
+}
