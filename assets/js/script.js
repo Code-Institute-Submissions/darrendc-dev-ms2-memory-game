@@ -9,6 +9,7 @@
         shuffleCards();
         moveDisplay();
         startTimer();
+        hideScore()
     };
 
     // Card Event Listener
@@ -42,6 +43,7 @@
                 $(firstFlip).addClass('matched');
                 $(secondFlip).addClass('matched');
                 addPair();
+                addScore();
                 finishGame();
         }else{
             console.log("Not matching");
@@ -52,6 +54,7 @@
                 $(firstFlip).addClass('flipCard').removeClass('mismatch');
                 $(secondFlip).addClass('flipCard').removeClass('mismatch');
                 pauseGame = false;
+                subScore();
             }, 1500);
         };
     }; 
@@ -127,3 +130,30 @@
     function stopTimer(){
         clearInterval(timePassed)
     };
+
+    // Score ------
+
+     var totalScore = 0;
+
+     function calculateScore() {
+        document.getElementById("scoredisplay").innerHTML = "Your final score is " + (Math.floor((totalScore * 5) - (move * 5) / 5));
+     }   
+
+     function addScore(){
+        console.log("add 20 points")
+        totalScore += 20;
+     }
+
+     function subScore(){
+        console.log("take 8 points")
+        totalScore -= 8;
+     }
+
+     function resetScore() {
+        if (totalScore > 0) { totalScore = 0 };
+     };
+
+     function hideScore(){
+        document.getElementById("scoredisplay").innerHTML = " -- !Finish the game to display your final score! -- ";
+     }
+
