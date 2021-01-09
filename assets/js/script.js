@@ -22,5 +22,29 @@
                 console.log("Second card");
                 flippedCard = false;
                 secondFlip = this;
+                cardCheck();
             };  
         });
+
+    //Check Are 2 cards matching
+
+
+    function cardCheck() {
+        console.log(firstFlip)
+        console.log(secondFlip)
+        if ( firstFlip.dataset.type === secondFlip.dataset.type){
+                console.log("Match");
+                $(firstFlip).addClass('matched');
+                $(secondFlip).addClass('matched');
+        }else{
+            console.log("Not matching");
+            pauseGame = true;
+            $(firstFlip).addClass('mismatch');
+            $(secondFlip).addClass('mismatch');
+            setTimeout ( function () {
+                $(firstFlip).addClass('flipCard').removeClass('mismatch');
+                $(secondFlip).addClass('flipCard').removeClass('mismatch');
+                pauseGame = false;
+            }, 1500);
+        };
+    }; 
