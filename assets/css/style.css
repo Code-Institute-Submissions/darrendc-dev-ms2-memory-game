@@ -19,10 +19,6 @@
     color: rgb(	251, 253, 138);
 }
 
-.page-nav li{
-    
-}
-
 
 #nav-top {
     background-color: rgba(	8, 105, 114, 0.8);
@@ -113,4 +109,46 @@
     border-style: solid;
     border-radius: 50%;
     background-color: rgb(255, 0, 0);
+}
+
+/* -- Game Css -- */
+
+.one {
+    background: url(/assets/images/background-images/type-1.jpg);
+    background-size: 100% 100%;
+}
+
+.two {
+    background: url(/assets/images/background-images/type-2.jpg);
+    background-size: 100% 100%;
+}
+
+.three {
+    background: url(/assets/images/background-images/type-3.jpg);
+    background-size: 100% 100%;
+}
+
+.four {
+    background: url(/assets/images/background-images/type-4.jpg);
+    background-size: 100% 100%;
+}
+
+.five {
+    background: url(/assets/images/background-images/type-5.jpg);
+    background-size: 100% 100%;
+}
+
+.six {
+    background: url(/assets/images/background-images/type-6.jpg);
+    background-size: 100% 100%;
+}
+
+.seven {
+    background: url(/assets/images/background-images/type-7.jpg);
+    background-size: 100% 100%;
+}
+
+.eight {
+    background: url(/assets/images/background-images/type-8.jpg);
+    background-size: 100% 100%;
 }
