@@ -187,3 +187,7 @@
     background: url(/assets/images/card-images/backside-card.jpg);
     background-size: 100% 100%;
 }
+
+.flipCard:hover{
+    transform: rotateY(180deg);
+}
