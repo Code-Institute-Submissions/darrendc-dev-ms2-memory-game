@@ -111,13 +111,26 @@
     background-color: rgb(255, 0, 0);
 }
 
+
+/* -- Game Info -- */
+.game-info{
+    color: white;
+    text-align: center;
+}
+
+.game-info button{
+    color: white;
+    background-color: rgb( 8, 105, 114);
+    text-align: center;
+}
+
 /* -- Game Css -- */
 
 .game-container {
     width: 432px;
     height: 432px;
-    background-color: rgb(	8, 105, 114);
-    margin: 0 auto;
+    background-color: rgb( 8, 105, 114);
+    margin: 7.5% auto;
     border-radius: 5px;
 }
 
