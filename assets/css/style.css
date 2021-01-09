@@ -184,6 +184,6 @@
 }
 
 .flipCard {
-    transform: rotateY(180deg);
     background: url(/assets/images/card-images/backside-card.jpg);
+    background-size: 100% 100%;
 }
