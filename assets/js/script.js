@@ -59,6 +59,17 @@
         };
     }; 
 
+    // Restart Game
+
+    $('#reset').click(function (){
+        $('.playingCard').removeClass('matched active-playingcard').addClass('unmatched flipCard');
+        shuffleCards();
+        resetMove();
+        resetScore();
+        resetTimer();
+        moveDisplay();
+    });
+
     // Randomise Cards
 
     function shuffleCards() {
