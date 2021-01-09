@@ -6,6 +6,7 @@
 
     window.onload = function() {
         $('.playingCard').addClass('flipCard');
+        shuffleCards();
     };
 
     // Card Event Listener
@@ -48,3 +49,13 @@
             }, 1500);
         };
     }; 
+
+    // Randomise Cards
+
+    function shuffleCards() {
+        shuffleArray.forEach ( playingCard => {
+            var ranNum = Math.floor(Math.random() * (shuffleArray.length-1));
+            playingCard.style.order = ranNum;
+            console.log("Randomised")
+        });
+    };
