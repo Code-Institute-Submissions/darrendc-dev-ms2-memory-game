@@ -59,3 +59,20 @@
             console.log("Randomised")
         });
     };
+
+    // All Cards Matched????
+
+    var matchedPair = 0;
+
+    function finishGame(){
+        if(matchedPair === 8){
+            stopTimer();
+            resetMove();
+            calculateScore();
+        }
+    }
+
+    function addPair(){
+        matchedPair++;
+    }
+
