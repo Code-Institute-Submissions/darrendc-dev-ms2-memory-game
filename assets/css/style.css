@@ -152,3 +152,8 @@
     background: url(/assets/images/background-images/type-8.jpg);
     background-size: 100% 100%;
 }
+
+.flipCard {
+    transform: rotateY(180deg);
+    background: url(/assets/images/card-images/backside-card.jpg);
+}
