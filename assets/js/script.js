@@ -7,6 +7,7 @@
     window.onload = function() {
         $('.playingCard').addClass('flipCard');
         shuffleCards();
+        this.moveDisplay();
     };
 
     // Card Event Listener
@@ -19,10 +20,12 @@
             flippedCard = true;
             selected = this;
             firstFlip = this;
+            moveAdd();
         } else {
                 console.log("Second card");
                 flippedCard = false;
                 secondFlip = this;
+                moveAdd();
                 cardCheck();
             };  
         });
@@ -37,6 +40,7 @@
                 console.log("Match");
                 $(firstFlip).addClass('matched');
                 $(secondFlip).addClass('matched');
+                addPair();
         }else{
             console.log("Not matching");
             pauseGame = true;
@@ -74,5 +78,28 @@
 
     function addPair(){
         matchedPair++;
+    }
+
+    function resetPair(){
+        if(matchedPair > 0){matchedPair = 0}
+    };
+
+    // Counting Moves
+
+
+    var moveUsed = document.getElementById("moveUsed");
+    var move = 1;
+
+     function moveDisplay(){
+         document.getElementById("moveUsed").innerHTML =  move ;
+     }
+
+    function resetMove() {
+        if (move > 0) { move = 0 }
+    }
+
+    function moveAdd() {
+        moveUsed.innerHTML = move;
+        move = move +1;
     }
 
