@@ -6,50 +6,55 @@
 
     window.onload = function() {
         $('.playingCard').addClass('flipCard');
+        hideScore();
         shuffleCards();
-        moveDisplay();
         startTimer();
-        hideScore()
     };
 
     // Card Event Listener
 
     $('.playingCard').click(function(){
         if (pauseGame) return;
-        $(this).removeClass('flipCard');
-        if(!flippedCard){
+        $(this).removeClass('flipCard').addClass('active-playingcard');
+        if($(this).hasClass('matched')){
+            $(this).removeClass('active-playingcard')
+            return;
+        } else if(!flippedCard){
             console.log("First card");
             flippedCard = true;
             selected = this;
             firstFlip = this;
             moveAdd();
         } else {
+            if ($(this).is($(selected))) {
+                return;
+            } else{
                 console.log("Second card");
                 flippedCard = false;
                 secondFlip = this;
                 moveAdd();
                 cardCheck();
             };  
-        });
+        };
+    });
 
     //Check Are 2 cards matching
-
 
     function cardCheck() {
         console.log(firstFlip)
         console.log(secondFlip)
         if ( firstFlip.dataset.type === secondFlip.dataset.type){
                 console.log("Match");
-                $(firstFlip).addClass('matched');
-                $(secondFlip).addClass('matched');
-                addPair();
+                $(firstFlip).addClass('matched').removeClass('active-playingcard');
+                $(secondFlip).addClass('matched').removeClass('active-playingcard');
                 addScore();
+                addPair();
                 finishGame();
         }else{
             console.log("Not matching");
             pauseGame = true;
-            $(firstFlip).addClass('mismatch');
-            $(secondFlip).addClass('mismatch');
+            $(firstFlip).addClass(' mismatch').removeClass('active-playingcard');
+                $(secondFlip).addClass('mismatch').removeClass('active-playingcard');
             setTimeout ( function () {
                 $(firstFlip).addClass('flipCard').removeClass('mismatch');
                 $(secondFlip).addClass('flipCard').removeClass('mismatch');
@@ -66,8 +71,9 @@
         shuffleCards();
         resetMove();
         resetScore();
-        resetTimer();
+        if(timer >0 ){timer = 0};
         moveDisplay();
+        hideScore();
     });
 
     // Randomise Cards
@@ -106,10 +112,6 @@
     var moveUsed = document.getElementById("moveUsed");
     var move = 1;
 
-     function moveDisplay(){
-         document.getElementById("moveUsed").innerHTML =  move ;
-     }
-
     function resetMove() {
         if (move > 0) { move = 0 }
     }
@@ -123,7 +125,7 @@
 
 
     var timeCounter = document.getElementById("timeCounter");
-    var timer = 0;
+    var timer = 1;
 
 
     function startTimer() {
@@ -132,11 +134,6 @@
            timer++;
         }, 1000);
     }
-
-
-    function resetTimer() {
-        if (timer > 0 ){timer = 0}
-    };
 
     function stopTimer(){
         clearInterval(timePassed)
