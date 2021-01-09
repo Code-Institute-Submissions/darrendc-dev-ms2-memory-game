@@ -113,6 +113,14 @@
 
 /* -- Game Css -- */
 
+.game-container {
+    width: 432px;
+    height: 432px;
+    background-color: rgb(	8, 105, 114);
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
 .playingCard {
     width: 100px;
     height: 100px;
