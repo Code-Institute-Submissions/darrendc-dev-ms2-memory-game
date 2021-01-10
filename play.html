@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-        <meta name="description" content="This is a memory game which consists of matching card pairs" />
+        <meta name="description" content="This is a memory game which consists of matching card pairs as quick as possible while trying to use as little moves as possible" />
         <meta name="keywords" content="HTML, CSS, JavaScript, memory, game, jquery, web developer" />
         <meta name="author" content="Darren Daly Carolan" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +17,11 @@
             <nav class="navbar navbar-expand-lg navbar-dark" id="nav-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><h1 id="logo">Transportation Game</h1></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown-mobile" aria-controls="dropdown-mobile" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-dropdown" aria-controls="mobile-dropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="dropdown-mobile">
+                </div>
+                <div class="collapse navbar-collapse" id="mobile-dropdown">
                     <ul class="navbar-nav page-nav">
                 <!-- Modal button -->
                         <li class="nav-item">
@@ -34,6 +34,7 @@
                             <a class="nav-link play-btn" href="play.html" id="active-play">Play</a>
                         </li>
                     </ul>
+                <!-- Modal display -->
                     <div class="modal fade modal-form" id="contact-modal" tabindex="-1" aria-labelledby="contactformheader" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -43,7 +44,7 @@
                                 <div class="modal-body">
                                     <input type="text" placeholder="Name">
                                     <input type="email" placeholder="Email Address">
-                                    <textarea name="project-idea" placeholder="Project Idea or Feedback" id="" cols="60" rows="6"></textarea>
+                                    <textarea name="project-idea" placeholder="Project Idea or Feedback" cols="60" rows="6"></textarea>
                                     <button type="button" class="btn modal-send" > Send </button>
                                 </div>
                             </div>
@@ -54,7 +55,7 @@
         </header>
         <div class="game-info">
             <h3><span id="scoredisplay"></span></h3>
-            <h4>Time Passed <span id="timeCounter">0</span> sec</h4>
+            <h4>Time Passed <span id="timeCounter"></span> sec</h4>
             <h4>Cards Flipped <span id="moveUsed">0</span></h4>
             <h4><button class="btn btn-md" id="reset">Restart</button></h4>
         </div>
