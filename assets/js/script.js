@@ -1,10 +1,12 @@
+$(document).ready(function () {
+
     var flippedCard = false;
     var pauseGame = false;
     var selected;
     var firstFlip, secondFlip;
     var shuffleArray = document.querySelectorAll('.playingCard');
 
-    window.onload = function() {
+    window.onload = function () {
         $('.playingCard').addClass('flipCard');
         hideScore();
         shuffleCards();
@@ -13,13 +15,13 @@
 
     // Card Event Listener
 
-    $('.playingCard').click(function(){
+    $('.playingCard').click(function () {
         if (pauseGame) return;
         $(this).removeClass('flipCard').addClass('active-playingcard');
-        if($(this).hasClass('matched')){
+        if ($(this).hasClass('matched')) {
             $(this).removeClass('active-playingcard')
             return;
-        } else if(!flippedCard){
+        } else if (!flippedCard) {
             console.log("First card");
             flippedCard = true;
             selected = this;
@@ -28,13 +30,13 @@
         } else {
             if ($(this).is($(selected))) {
                 return;
-            } else{
+            } else {
                 console.log("Second card");
                 flippedCard = false;
                 secondFlip = this;
                 moveAdd();
                 cardCheck();
-            };  
+            };
         };
     });
 
@@ -43,44 +45,44 @@
     function cardCheck() {
         console.log(firstFlip)
         console.log(secondFlip)
-        if ( firstFlip.dataset.type === secondFlip.dataset.type){
-                console.log("Match");
-                $(firstFlip).addClass('matched').removeClass('active-playingcard');
-                $(secondFlip).addClass('matched').removeClass('active-playingcard');
-                addScore();
-                addPair();
-                finishGame();
-        }else{
+        if (firstFlip.dataset.type === secondFlip.dataset.type) {
+            console.log("Match");
+            $(firstFlip).addClass('matched').removeClass('active-playingcard');
+            $(secondFlip).addClass('matched').removeClass('active-playingcard');
+            addScore();
+            addPair();
+            finishGame();
+        } else {
             console.log("Not matching");
             pauseGame = true;
             $(firstFlip).addClass(' mismatch').removeClass('active-playingcard');
-                $(secondFlip).addClass('mismatch').removeClass('active-playingcard');
-            setTimeout ( function () {
+            $(secondFlip).addClass('mismatch').removeClass('active-playingcard');
+            setTimeout(function () {
                 $(firstFlip).addClass('flipCard').removeClass('mismatch');
                 $(secondFlip).addClass('flipCard').removeClass('mismatch');
                 pauseGame = false;
                 subScore();
             }, 1500);
         };
-    }; 
+    };
 
     // Restart Game
 
-    $('#reset').click(function (){
+    $('#reset').click(function () {
         $('.playingCard').removeClass('matched active-playingcard').addClass('unmatched flipCard');
+        resetPair();
         shuffleCards();
         resetMove();
         resetScore();
-        if(timer >0 ){timer = 0};
-        moveDisplay();
+        restartTimer();
         hideScore();
     });
 
     // Randomise Cards
 
     function shuffleCards() {
-        shuffleArray.forEach ( playingCard => {
-            var ranNum = Math.floor(Math.random() * (shuffleArray.length-1));
+        shuffleArray.forEach(playingCard => {
+            var ranNum = Math.floor(Math.random() * (shuffleArray.length - 1));
             playingCard.style.order = ranNum;
             console.log("Randomised")
         });
@@ -90,20 +92,20 @@
 
     var matchedPair = 0;
 
-    function finishGame(){
-        if(matchedPair === 8){
+    function finishGame() {
+        if (matchedPair === 8) {
             stopTimer();
             resetMove();
             calculateScore();
         }
     }
 
-    function addPair(){
+    function addPair() {
         matchedPair++;
     }
 
-    function resetPair(){
-        if(matchedPair > 0){matchedPair = 0}
+    function resetPair() {
+        if (matchedPair > 0) { matchedPair = 0 }
     };
 
     // Counting Moves
@@ -118,7 +120,7 @@
 
     function moveAdd() {
         moveUsed.innerHTML = move;
-        move = move +1;
+        move = move + 1;
     }
 
     // timer
@@ -129,39 +131,50 @@
 
 
     function startTimer() {
-        timePassed = setInterval(function(){
-           document.getElementById("timeCounter").innerHTML =  timer;
-           timer++;
+        timePassed = setInterval(function () {
+            document.getElementById("timeCounter").innerHTML = timer;
+            timer++;
         }, 1000);
     }
 
-    function stopTimer(){
+    function restartTimer() {
+        timer = 0;
+        timePassed = setInterval(function () {
+            timeCounter.innerHTML = timer;
+            timer++;
+        }, 1000);
+    }
+
+    function stopTimer() {
         clearInterval(timePassed)
     };
 
-    // Score ------
+    // Score
 
-     var totalScore = 0;
+    var totalScore = 0;
 
-     function calculateScore() {
+    function calculateScore() {
         document.getElementById("scoredisplay").innerHTML = "Your final score is " + (Math.floor((totalScore * 5) - (move * 5) / 5));
-     }   
+    }
 
-     function addScore(){
+    function addScore() {
         console.log("add 20 points")
         totalScore += 20;
-     }
+    }
 
-     function subScore(){
+    function subScore() {
         console.log("take 8 points")
         totalScore -= 8;
-     }
+        if (totalScore < 0) { totalScore = 0; }
+    }
 
-     function resetScore() {
-        if (totalScore > 0) { totalScore = 0 };
-     };
+    function resetScore() {
+        if (totalScore > 0) { totalScore = 0; }
+    }
 
-     function hideScore(){
+    function hideScore() {
         document.getElementById("scoredisplay").innerHTML = " -- !Finish the game to display your final score! -- ";
-     }
+    }
+
+});
 
