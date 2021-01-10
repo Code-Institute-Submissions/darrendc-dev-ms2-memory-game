@@ -16,8 +16,9 @@ I decided to do the memory game as to challenge myself and what i have learned i
 This is a very clean and well layed out website which is a great demonstration of skill and eye friendly content of which won't be hard on the eyes or get to bland
 after spending extended periods of time on it.
 
-![Screenshot of landing page for website](assets/images/readme-images/)
-![Screenshot of play page for the game](assets/images/readme-images/)
+![Screenshot of landing page for website](assets/images/readme-images/home-screenshot.png)
+![Screenshot of play page for the game](assets/images/readme-images/play-screenshot.png)
+![Screenshot of email modal](assets/images/readme-images/modal-screenshot.png)
 
 
 ## 5 Planes of UX
@@ -47,9 +48,9 @@ The background image for the website was picked due to the nice colours it displ
 
 #### Player
 As a new player, I was presently suprised landing on the website to be greeted by a how to and the instructions required to play.
-[Image of How to and info on landing page]()
+![Image of How to and info on landing page](assets/images/readme-images/home-screenshot.png)
 As a returning player I find the website to be very eye pleasing and easy to look at its not very in your face.
-[Image of the game page and score]()
+![Image of the game page and score](assets/images/readme-images/play-screenshot.png)
 
 # Development
 The development of this project was all carried out using GitHub and Gitpod to allow for ease of version control and testing.
@@ -71,11 +72,13 @@ The development of this project was all carried out using GitHub and Gitpod to a
 While doing the last few small fixes and looking for as many mistakes as I could, I started validating and formating the project I validated my CSS using [W3C](https://jigsaw.w3.org/css-validator/validator)
 I then used [W3](https://validator.w3.org/nu/#l61c45) for HTML and finally [JSHint](https://jshint.com/) for Jquery
 
-![HTML Validate Results](assets/images/htmlvalidate.png)
+![HTML Validate Results](assets/images/readme-images/html-vali.png)
 
-![CSS Validate Results](assets/images/cssvalidate.png)
+![HTML Validate Results](assets/images/readme-images/html2-vali.png)
 
-![JQuery Validate Results](assets/images/JQueryvalidate.png)
+![CSS Validate Results](assets/images/readme-images/css-vali.png)
+
+![JQuery Validate Results](assets/images/readme-images/javascript-vali.png)
 
 # Testing
 The testing for this project was a long and tedious job as it was my first time testing javaScript manually.
