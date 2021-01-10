@@ -1,4 +1,4 @@
-# Darren Daly Carolan Personal Portfolio
+# Darren Daly Carolan Memory Game
 ## Purpose
 
 This is my second milestone project I have done as part of Code Institute's Full Stack software development course which I am doing
