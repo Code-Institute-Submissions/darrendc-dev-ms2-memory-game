@@ -11,6 +11,12 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
         <link rel="stylesheet" href="assets/css/style.css" />
+        <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("user_yyBWucBK5MoKcNuX4njDv");
+            })();
+        </script>
     <title>Memory Game</title>
 </head>
 <body>
@@ -43,12 +49,14 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="contactformheader">Contact Form</h5>
                         </div>
-                        <div class="modal-body">
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="Email Address">
-                            <textarea name="project-idea" placeholder="Project Idea or Feedback" cols="30" rows="10"></textarea>
-                            <button type="button" class="btn modal-send">Send</button>
-                        </div>
+                            <div class="modal-body">
+                                <form onsubmit="return sendMail(this);">
+                                <input type="text" name="name" id="fullname" placeholder="Name" required>
+                                <input type="email" name="emailaddress" id="email" placeholder="Email Address" required>
+                                <textarea name="projectidea" id="feedback" placeholder="Project Idea or Feedback" cols="35" rows="5" required></textarea>
+                                <button type="submit" class="btn modal-send">Send</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     </div>
@@ -61,33 +69,18 @@
                 <h2>How to Play</h2>
             </div>
             <div class="card-text">
-                <p>Press play to start playing</p>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, 
-                and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum 
-                et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of 
-                Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" 
-                by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-            </div>
-        </div>
-    </div>
-    <div class="card col-8 offset-2" id="info">
-        <div class="card-body">
-            <div class="card-title">
-                <h2>Info</h2>
-            </div>
-            <div class="card-text">
-                <p>Press play to start playing</p>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, 
-                and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum 
-                et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of 
-                Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" 
-                by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                <h5>Press the play tab in the nav bar to start playing</h5>
+                <p>
+                    When first starting to play the transport memory game take your time the score which will display after all cards have been matched
+                    is not taking into account time you spent so make sure to take note of where the images are as the less moves you take the higher score
+                    you can get as moves are taken into account when playing.
+                    <br>
+                    <br>
+                    The playing cards give visual feedback when a card is flipped it it wll get a blue outline around the edge to show which image you have flipped
+                    so you dont forget which one you picked. When you select two cards the game will check if they match and if they do then you will get a green outline and if
+                    they are not a match you will get a red outline until they are reset.
+                </p>
+                <h4>If you expierence any issues with the game or notice any bugs please feel free to contact me through the contact tab</h4>
             </div>
         </div>
     </div>
@@ -100,6 +93,7 @@
                 <li class="list-item-social"><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
             </ul>
         </footer>
+        <script src="assets/js/email.js"></script>
     </div>
 </body>
 </html>
