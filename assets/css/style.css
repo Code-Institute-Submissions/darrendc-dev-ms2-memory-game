@@ -57,7 +57,12 @@
 
 .modal-header {
     color: rgb(	251, 253, 138);
-    background-color: rgb(8, 105, 114)
+    background-color: rgb(8, 105, 114);
+    text-align: center;
+}
+
+.modal-title {
+    text-align: center;
 }
 
 
@@ -67,8 +72,13 @@
 
 /*-- Cards -- */
 #howToPlay  {
-    background-color: rgb(251, 253, 138) ;
+    color: rgb(251, 253, 138);
+    background-color: rgb(8, 105, 114) ;
     margin-top: 2.5%;
+}
+
+#howToPlay  p{
+    font-size: medium;
 }
 
 #info {
@@ -112,7 +122,7 @@
 
 /* -- Game Info -- */
 .game-info{
-    color: white;
+    color: rgb(	251, 253, 138);
     text-align: center;
 }
 
